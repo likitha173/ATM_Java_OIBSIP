@@ -9,4 +9,11 @@ public class Bank{
     public String getNewUserUUID(){
         
     }
+    public String getNewAcountUUID(){
+        
+    }
+    // Add an account
+    public void addAccount(Account anAcct){
+        this.accounts.add(anAcct);
+    }
 }

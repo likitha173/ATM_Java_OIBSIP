@@ -5,11 +5,11 @@ public class Account{
     private String name;  //The name of Account
     // private double balance;  //The current balance of the Account
     private String uuid;   //The account ID number
-    private User holders;  //The User object that owns this account
+    private User holder;  //The User object that owns this account
     private ArrayList<Transaction> transactions; //The list of transactions for this account
 
-    public Account(String name, user holder, Bank theBank){
-        //set the account name and hodler
+    public Account(String name, User holder, Bank theBank){
+        //set the account name and holder
         this.name = name;
         this.holder = holder;
 
@@ -20,7 +20,13 @@ public class Account{
         this.transactions = new ArrayList<Transaction>();
 
         //add to holder and bank lists
-        hodler.addAccount(this);
+        holder.addAccount(this);
         theBank.addAccount(this);
+    }
+
+    //Get the Account ID and Return the UUID
+
+    public String getUUID(){
+        return this.uuid;
     }
 }
